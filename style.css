@@ -1,0 +1,111 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+body{
+    background: hotpink;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+ /* Happy new Year title  */
+.title{
+    text-transform: uppercase;
+    color: white;
+    margin-top: 20px;
+    letter-spacing: 5px;
+    -webkit-text-stroke: 1px black;
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.52);
+    animation: jiggle 3s linear infinite;
+}
+@keyframes jiggle{
+    25%{
+        transform: rotateZ(10deg);
+    }
+    50%{
+        transform: rotateZ(0deg);
+    }
+    75%{
+        transform: rotateZ(-10deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+    }
+}
+
+.emoji{
+    width: 30vw;
+    margin-top: 30px;
+    animation: zoomInOut 3s ease infinite;
+}
+@keyframes zoomInOut{
+    50%{
+        transform: scale(1.2);
+    }
+
+}
+
+/* background music */
+audio{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 0;
+}
+
+/* Welcome screeen / curtain thing  */
+.curtain-container{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.curt{
+    position: absolute;
+    width: 102vw;
+    height: 100vh;
+}
+.left-curt{
+    left: 0%;
+    z-index: 1;
+    clip-path: polygon(0 0, 52% 0, 52% 100%, 0 100%);
+    transition: width 3s;
+}
+.right-curt{
+    right: 0%;
+    clip-path: polygon(53% 0, 100% 0, 100% 100%, 53% 100%);
+
+}
+button{
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    padding: 10px 20px;
+    font-size: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.52);
+}
+button:hover{
+    box-shadow: 0px 0px 10px black;
+}
+
+/* // Opening curtain  */
+.open-curtain{
+    animation: open 2s ease-out forwards;
+}
+@keyframes open{
+    to{
+        width: 0%;
+    }
+}
