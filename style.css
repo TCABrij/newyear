@@ -76,8 +76,7 @@ audio{
 .left-curt{
     left: 0%;
     z-index: 1;
-    clip-path: polygon(0 0, 52% 0, 52% 100%, 0 100%);
-    transition: width 3s;
+    clip-path: polygon(0 0, 52% 0, 52% 100%, 0 100%)
 }
 .right-curt{
     right: 0%;
